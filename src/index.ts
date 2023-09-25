@@ -1,12 +1,3 @@
-type Planet = {
-  name: string;
-  coordinates: [number, number, number, number];
-  situation: Situation;
-  satellites: string[];
-};
-type Situation = "habitado" | "habitável" | "inabitável" | "inexplorado";
-let listOfPlanets: Planet[] = [];
-
 function insertPlanet(
   name: string,
   coordinates: [number, number, number, number],
@@ -61,3 +52,31 @@ function removeSatellite(name: string, satelliteToRemove: string) {
     alert("planeta não encontrado");
   }
 }
+
+function showPlanets() {
+  for (let i of listOfPlanets) {
+    for (let j in i) {
+      if (j === "name") {
+        console.log("Nome do planeta: " + i[j]);
+      }
+      if (j === "coordinates") {
+        console.log("Coodernadas: " + i[j]);
+      }
+      if (j === "situation") {
+        console.log("Situação: " + i[j]);
+      }
+      if (j === "satellites") {
+        console.log("Satélites: " + i[j] + "\n");
+      }
+    }
+  }
+}
+
+type Planet = {
+  name: string;
+  coordinates: [number, number, number, number];
+  situation: Situation;
+  satellites: string[];
+};
+type Situation = "habitado" | "habitável" | "inabitável" | "inexplorado";
+let listOfPlanets: Planet[] = [];
