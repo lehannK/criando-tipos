@@ -1,3 +1,19 @@
+let listOfPlanets = [];
+// teste geral de todas as funções
+insertPlanet("mercurio", [0, 0, 0, 0], "inabitável", ["N/A"]);
+insertPlanet("venus", [1, 1, 1, 1], "inabitável", ["N/A"]);
+insertPlanet("terra", [2, 2, 2, 2], "habitado", ["lua"]);
+insertPlanet("marte", [3, 3, 3, 3], "habitável", ["fobos, deimos"]);
+insertPlanet("júpter", [4, 4, 4, 4], "inabitável", [
+    "io, europa, ganimedes, calisto",
+]);
+showPlanets();
+updatePlanetSituation("terra", "inabitável");
+showPlanets();
+addSatellite("júpter", "temisto");
+showPlanets();
+removeSatellite("júpter", "temisto");
+showPlanets();
 function insertPlanet(name, coordinates, situation, satellites) {
     let planet = {
         name,
@@ -13,7 +29,7 @@ function updatePlanetSituation(name, newSituation) {
         planetToUpdate.situation = newSituation;
     }
     else {
-        alert("planeta não encontrado");
+        console.log("planeta não encontrado");
     }
 }
 function addSatellite(name, satelliteToAdd) {
@@ -22,7 +38,7 @@ function addSatellite(name, satelliteToAdd) {
         planetToAddSatellite.satellites.push(satelliteToAdd);
     }
     else {
-        alert("planeta não encontrado");
+        console.log("planeta não encontrado");
     }
 }
 function removeSatellite(name, satelliteToRemove) {
@@ -34,11 +50,11 @@ function removeSatellite(name, satelliteToRemove) {
             planetToRemoveSatellite.satellites.splice(satelliteIndex, 1);
         }
         else {
-            alert("satelite não existe");
+            console.log("satelite não existe");
         }
     }
     else {
-        alert("planeta não encontrado");
+        console.log("planeta não encontrado");
     }
 }
 function showPlanets() {
@@ -59,4 +75,3 @@ function showPlanets() {
         }
     }
 }
-let listOfPlanets = [];
