@@ -1,31 +1,16 @@
+type Situation = "habitado" | "habitável" | "inabitável" | "inexplorado";
+type Coordinates = [number, number, number, number];
 type Planet = {
   name: string;
-  coordinates: [number, number, number, number];
+  coordinates: Coordinates;
   situation: Situation;
   satellites: string[];
 };
-type Situation = "habitado" | "habitável" | "inabitável" | "inexplorado";
 let listOfPlanets: Planet[] = [];
-
-// teste geral de todas as funções
-insertPlanet("mercurio", [0, 0, 0, 0], "inabitável", ["N/A"]);
-insertPlanet("venus", [1, 1, 1, 1], "inabitável", ["N/A"]);
-insertPlanet("terra", [2, 2, 2, 2], "habitado", ["lua"]);
-insertPlanet("marte", [3, 3, 3, 3], "habitável", ["fobos, deimos"]);
-insertPlanet("júpter", [4, 4, 4, 4], "inabitável", [
-  "io, europa, ganimedes, calisto",
-]);
-showPlanets();
-updatePlanetSituation("terra", "inabitável");
-showPlanets();
-addSatellite("júpter", "temisto");
-showPlanets();
-removeSatellite("júpter", "temisto");
-showPlanets();
 
 function insertPlanet(
   name: string,
-  coordinates: [number, number, number, number],
+  coordinates: Coordinates,
   situation: Situation,
   satellites: string[]
 ) {
@@ -96,3 +81,19 @@ function showPlanets() {
     }
   }
 }
+
+// // teste geral de todas as funções
+// insertPlanet("mercurio", [0, 0, 0, 0], "inabitável", ["N/A"]);
+// insertPlanet("venus", [1, 1, 1, 1], "inabitável", ["N/A"]);
+// insertPlanet("terra", [2, 2, 2, 2], "habitado", ["lua"]);
+// insertPlanet("marte", [3, 3, 3, 3], "habitável", ["fobos, deimos"]);
+// insertPlanet("júpter", [4, 4, 4, 4], "inabitável", [
+//   "io, europa, ganimedes, calisto",
+// ]);
+// showPlanets();
+// updatePlanetSituation("terra", "inabitável");
+// showPlanets();
+// addSatellite("júpter", "temisto");
+// showPlanets();
+// removeSatellite("júpter", "temisto");
+// showPlanets();
